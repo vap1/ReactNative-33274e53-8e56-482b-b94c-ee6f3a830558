@@ -24,9 +24,11 @@ const HomeScreen: React.FC = () => {
     <View style={styles.container}>
       <Text style={styles.title}>Leads</Text>
       {leads.map((lead: Lead) => (
-        <Text key={lead.leadId} style={styles.leadItem}>
-          {lead.contactDetails}
-        </Text>
+        <View key={lead.leadId} style={styles.leadItem}>
+          <Text>{lead.contactDetails}</Text>
+          <Text>{lead.relevantInfo}</Text>
+          {/* Render other lead details */}
+        </View>
       ))}
     </View>
   );
@@ -44,7 +46,6 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   leadItem: {
-    fontSize: 16,
     marginBottom: 8,
   },
 });
