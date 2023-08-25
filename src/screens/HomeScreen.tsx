@@ -1,6 +1,4 @@
-Sure! Here's the updated code for the `src/screens/HomeScreen.tsx` file, addressing the comments:
 
-```tsx
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Lead } from '../types/LeadTypes';
@@ -26,11 +24,9 @@ const HomeScreen: React.FC = () => {
     <View style={styles.container}>
       <Text style={styles.title}>Leads</Text>
       {leads.map((lead: Lead) => (
-        <View key={lead.leadId} style={styles.leadItem}>
-          <Text>{lead.contactDetails}</Text>
-          <Text>{lead.relevantInfo}</Text>
-          {/* Render other lead details */}
-        </View>
+        <Text key={lead.leadId} style={styles.leadItem}>
+          {lead.contactDetails}
+        </Text>
       ))}
     </View>
   );
@@ -48,11 +44,9 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   leadItem: {
+    fontSize: 16,
     marginBottom: 8,
   },
 });
 
 export default HomeScreen;
-```
-
-Please note that the code assumes the existence of the `Lead` type in the `src/types/LeadTypes.ts` file and the `getLeads` function in the `src/apis/LeadApi.ts` file. Make sure to update the code accordingly based on your actual implementation.
